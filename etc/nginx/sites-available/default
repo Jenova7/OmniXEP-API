@@ -43,11 +43,11 @@ server {
         #### Update the two entries below and replace 'myUser' with the user omniwallet is installed under
         ##############
 
-        ## Set this to reflect the location of the www directory within the omniapi repo.
-        root /home/ubuntu/omniapi/www/;
+        ## Set this to reflect the location of the www directory within the OmniXEP-API repo.
+        root /home/ubuntu/OmniXEP-API/www/;
         index index.htm index.html;
 
         ## Set this to reflect the location of the omni-redirects file within the omniwallet repo
-        include /home/ubuntu/omniapi/etc/nginx/sites-available/omni-redirects;
+        include /home/ubuntu/OmniXEP-API/etc/nginx/sites-available/omni-redirects;
 
 }

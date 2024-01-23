@@ -6,14 +6,17 @@ class RPCHost():
     def __init__(self):
         self._session = requests.Session()
         try:
-            with open( os.getenv("HOME") +'/.bitcoin/bitcoin.conf') as fp:
-                RPCPORT="8332"
-                RPCHOST="localhost"
+            with open( os.getenv("HOME") +'/.omnixep/omnixep.conf') as fp:
+                RPCPORT="17116"
+                RPCHOST="82.67.5.168"
+                RPCUSER="rELZLXHBNGnCNK9c"
+                RPCPASS="SEuL5DlKT66o9uhC"
                 RPCSSL=False
+
                 for line in fp:
                     #print line
                     if line.split('=')[0] == "testnet" and line.split('=')[1] == "1":
-                        RPCPORT="18332"
+                        RPCPORT="17116"
                     elif line.split('=')[0] == "rpcuser":
                         RPCUSER=line.split('=')[1].strip()
                     elif line.split('=')[0] == "rpcpassword":
@@ -28,7 +31,7 @@ class RPCHost():
                         else:
                             RPCSSL=False
         except IOError as e:
-            response='{"error": "Unable to load bitcoin config file. Please Notify Site Administrator"}'
+            response='{"error": "Unable to load omnixep config file. Please Notify Site Administrator"}'
             return response
         if RPCSSL:
             self._url = "https://"+RPCUSER+":"+RPCPASS+"@"+RPCHOST+":"+RPCPORT
@@ -66,7 +69,7 @@ class RPCHost():
 #Define / Create RPC connection
 host=RPCHost()
 
-#Bitcoin Generic RPC calls
+#bitcoin Generic RPC calls
 def getinfo():
     try:
       #support omnicore v0.6

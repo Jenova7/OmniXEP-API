@@ -3,7 +3,7 @@ from pybitcointools import pubtoaddr
 
 __b58chars = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 __b58base = len(__b58chars)
-max_currency_value=21000000
+max_currency_value=30000000000
 dust_limit=546
 
 def formatted_decimal(float_number):

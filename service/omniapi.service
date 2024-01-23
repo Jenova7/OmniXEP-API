@@ -1,9 +1,9 @@
 [Unit]
-Description=OmniAPI service
+Description=OmniXEP API service
 
 [Service]
 Environment="PATH=/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-ExecStart=/home/ubuntu/omniapi/startApi.sh
+ExecStart=/home/ubuntu/OmniXEP-API/startApi.sh
 PIDFile=/tmp/omniapi.pid
 User=ubuntu
 Restart=on-failure
